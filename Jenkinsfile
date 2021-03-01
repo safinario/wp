@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('DeploytoStage') {
+        steps('DeploytoStage') {
             when {
                 branch 'master'
             }        
