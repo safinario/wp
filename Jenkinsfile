@@ -2,6 +2,7 @@ pipeline {
     agent any
     stages {
         stage ('DeploytoStage') {  
+            withCredentials([sshUserPrivateKey(credentialsId: 'Home')])
             steps {
                 sshagent (credentials : [Home]){
                 echo 'Deploying..'
