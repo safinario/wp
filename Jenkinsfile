@@ -5,7 +5,8 @@ pipeline {
             steps {
                 sshagent (credentials : [Home]){
                 echo 'Deploying..'
-                sh 'ssh home pg_dump -c wp > wp_back && pg_dump -c wp > wp_trans && scp -i ~/Documents/aws.pem wp_back ubuntu@ec2-3-127-70-240.eu-central-1.compute.amazonaws.com:/home/ubuntu/'
+                sh 'ssh safinario@static-simnet-185-130-52-137.stargrpns.pp.ua'
+                sh 'pg_dump -c wp > wp_back && pg_dump -c wp > wp_trans && scp -i ~/Documents/aws.pem wp_back ubuntu@ec2-3-127-70-240.eu-central-1.compute.amazonaws.com:/home/ubuntu/'
                 }
             }
         }
