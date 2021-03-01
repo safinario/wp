@@ -1,10 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage ('DeploytoStage') {
-            when {
-                branch 'master'
-            }        
+        stage ('DeploytoStage') {  
             steps {
                 sshagent (credentials : [Home]){
                 echo 'Deploying..'
